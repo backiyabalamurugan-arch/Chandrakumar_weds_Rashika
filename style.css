@@ -11,7 +11,6 @@
   pointer-events: none; /* Allows user to click through to buttons and links */
   z-index: 9999;        /* Places petals over background sections */
 }
-/* Fullscreen Envelope Overlay Backdrop */
 .envelope-overlay {
   position: fixed;
   top: 0;
