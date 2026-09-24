@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S. Chandrakumar & C. Rashika – Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Josefin+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Background Audio -->
+    <audio id="bg-music" src="song.mp3" loop preload="auto"></audio>
+
+    <!-- Interactive Envelope Overlay -->
+    <div id="envelope-overlay" class="envelope-overlay">
+        <div class="envelope-container" id="envelope-btn">
+            <div class="envelope">
+                <!-- Backing -->
+                <div class="env-back"></div>
+
+                <!-- Inside Card -->
+                <div class="env-card">
+                    <p class="env-eyebrow">Sri Throwpathi Amman Thunai</p>
+                    <h2 class="env-names">Chandrakumar & Rashika</h2>
+                    <p class="env-sub">You are cordially invited</p>
+                </div>
+
+                <!-- 4 Flaps -->
+                <div class="env-flap env-flap-bottom"></div>
+                <div class="env-flap env-flap-left"></div>
+                <div class="env-flap env-flap-right"></div>
+                <div class="env-flap env-flap-top"></div>
+
+                <!-- Wax Seal Image Button -->
+                <img src="seal.png" id="seal-btn" class="env-seal-img" alt="Gold Wax Seal" />
+            </div>
+        </div>
+    </div>
+    <canvas id="flower-rain-canvas"></canvas>
+    <div id="root">
+
+        <!-- Background Audio (Plays instantly on load) -->
+        <!---<audio id="bg-music" src="song.mp3" autoplay loop muted playsinline preload="auto"></audio>-->
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg">
+                <img src="https://plus.unsplash.com/premium_photo-1756578903694-8c9b490168c0?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Background" />
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-eyebrow">Sri Throwpathi Amman Thunai</p>
+                <p class="hero-eyebrow">We're getting married</p>
+                <h1 class="hero-title">Chandrakumar <span class="ampersand">&</span> Rashika</h1>
+                <p class="hero-parents-intro">The Proud Parents</p>
+                <p class="hero-parents">
+                    Mr. Aalayam N. Sundaram Reddiar & Mrs. S. Indira
+                    <span class="dot"></span>
+                    Mr. K. Chandrasekaran Reddiar & Mrs. C. Chithra
+                </p>
+                <div class="hero-events">
+                    <div class="hero-event-block">
+                        <h3 class="hero-event-title">13 . 11 . 2026</h3>
+                        <p class="hero-date">Friday</p>
+                    </div>
+                    <div class="hero-event-block">
+                        <h3 class="hero-event-title">Chennai</h3>
+                        <p class="hero-venue">East Tambaram</p>
+                    </div>
+                </div>
+                <a href="#details" class="hero-cta">View Details</a>
+            </div>
+            <a href="#details" class="hero-scroll">
+                <span class="hero-scroll-text">Scroll</span>
+                <div class="hero-scroll-arrow"></div>
+            </a>
+        </section>
+
+        <!-- Countdown Section -->
+        <section class="countdown">
+            <div class="countdown-inner">
+                <div class="section-title">Save the Date</div>
+                <div class="section-subtitle">Friday, November 13th, 2026</div>
+                <div class="countdown-timer" id="countdown-timer">
+                    <div class="countdown-card">
+                        <div class="countdown-value" id="cd-days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-card">
+                        <div class="countdown-value" id="cd-hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-card">
+                        <div class="countdown-value" id="cd-minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-card">
+                        <div class="countdown-value" id="cd-seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Details Section -->
+        <section id="details" class="details">
+            <div class="details-inner">
+                <div class="section-title">When & Where</div>
+                <div class="section-subtitle">Join us in our celebration</div>
+                <div class="details-cards-container">
+
+                    <!-- Wedding Card -->
+                    <div class="details-card">
+                        <div class="details-card-image">
+                            <div class="details-card-badge">Wedding</div>
+                            <img src="marriage.jpeg" />
+                        </div>
+                        <div class="details-card-body">
+                            <p class="details-location-label">Ceremony</p>
+                            <h3 class="details-location-name">The Muhurtham</h3>
+                            <div class="details-info-list">
+                                <div class="details-info-item">
+                                    <div class="details-info-icon">📅</div>
+                                    <div>Friday, 13 Nov 2026<br><span
+                                            style="font-size:0.85rem; color:var(--color-text-light)">6:00 AM - 7:30
+                                            AM</span></div>
+                                </div>
+                                <div class="details-info-item">
+                                    <div class="details-info-icon">📍</div>
+                                    <div>Santhi Thirumana Mandapam<br><span
+                                            style="font-size:0.85rem; color:var(--color-text-light)">No. 19, Valmiki
+                                            Street, East Tambaram, Chennai - 600 059</span></div>
+                                </div>
+                            </div>
+                            <div class="details-actions">
+                                <a href="https://maps.google.com/?q=Santhi+Thirumana+Mandapam+Tambaram" target="_blank"
+                                    class="details-btn details-btn--primary">Get Directions</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reception Card -->
+                    <div class="details-card">
+                        <div class="details-card-image">
+                            <div class="details-card-badge">Reception</div>
+                            <img src="reception.png" alt="Wedding Reception" />
+                        </div>
+                        <div class="details-card-body">
+                            <p class="details-location-label">Celebration</p>
+                            <h3 class="details-location-name">Wedding Reception</h3>
+                            <div class="details-info-list">
+                                <div class="details-info-item">
+                                    <div class="details-info-icon">📅</div>
+                                    <div>Thursday, 12 Nov 2026<br><span
+                                            style="font-size:0.85rem; color:var(--color-text-light)">6:00 PM
+                                            Onwards</span></div>
+                                </div>
+                                <div class="details-info-item">
+                                    <div class="details-info-icon">📍</div>
+                                    <div>Santhi Thirumana Mandapam<br><span
+                                            style="font-size:0.85rem; color:var(--color-text-light)">No. 19, Valmiki
+                                            Street, East Tambaram, Chennai - 600 059</span></div>
+                                </div>
+                            </div>
+                            <div class="details-actions">
+                                <a href="https://maps.google.com/?q=Santhi+Thirumana+Mandapam+Tambaram" target="_blank"
+                                    class="details-btn details-btn--primary">Get Directions</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Profiles Section (Custom Addition to match PDF) -->
+        <section class="timeline">
+            <div class="timeline-inner">
+                <div class="section-title">The Couple</div>
+                <div style="text-align:center;margin-bottom: 2rem;">
+                    <img src="childhood.jpeg" alt="photo"
+                        style="display: inline-block; max-width: 100%; height: 500px; width:400px; border-radius: 20px;">
+                </div>
+                <div style="text-align:center; margin-bottom: 2rem;">
+                    <!-- <div class="details-card" style="margin-bottom: 1rem; border-left: 4px solid var(--color-primary)">
+                        <div class="details-card-body">
+                            <h3 class="timeline-event-name">Selvan. S. Chandrakumar</h3>
+                            <p class="timeline-event-date">B.Tech. (Mech.)</p>
+                            <p style="font-size: 0.9rem; color: var(--color-text-light)">Business Analyst, FedEx Express</p>
+                        </div>
+                    </div>
+                    <div class="details-card" style="border-left: 4px solid var(--color-primary)">
+                        <div class="details-card-body">
+                            <h3 class="timeline-event-name">Selvi. C. Rashika</h3>
+                            <p class="timeline-event-date">B.Tech. (IT), B.Ed.,</p>
+                            <p style="font-size: 0.9rem; color: var(--color-text-light)">Teacher, Ramakrishna Mission School</p>
+                        </div>
+                    </div>-->
+                    <!-- Groom Card -->
+                    <div class="details-card profile-card">
+                        <img src="boy.png" alt="Selvan. S. Chandrakumar" class="card-avatar">
+                        <div class="details-card-body">
+                            <h3 class="timeline-event-name">Selvan. S. Chandrakumar</h3>
+                            <p class="timeline-event-date">B.Tech. (Mech.)</p>
+                            <p style="font-size: 0.9rem; color: var(--color-text-light)">Business Analyst, FedEx Express
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bride Card -->
+                    <div class="details-card profile-card">
+                        <img src="girl.png" alt="Selvi. C. Rashika" class="card-avatar">
+                        <div class="details-card-body">
+                            <h3 class="timeline-event-name">Selvi. C. Rashika</h3>
+                            <p class="timeline-event-date">B.Tech. (IT), B.Ed.,</p>
+                            <p style="font-size: 0.9rem; color: var(--color-text-light)">Teacher, Ramakrishna Mission
+                                School</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <a href="#" class="footer-back-top">
+                <div class="footer-back-top-circle">
+                    <div class="footer-back-top-arrow"></div>
+                </div>
+                <span class="footer-back-top-text">Back to Top</span>
+            </a>
+            <div class="footer-content">
+                <div class="footer-ornament">
+                    <div class="footer-ornament-line"></div>
+                    <div class="footer-ornament-dot"></div>
+                    <div class="footer-ornament-line"></div>
+                </div>
+
+                <p
+                    style="font-family: var(--font-body); letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 1rem;">
+                    With Best Compliments From:</p>
+
+                <div class="footer-names">Chandrakumar & Rashika</div>
+            </div>
+        </footer>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
