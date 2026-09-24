@@ -161,5 +161,4 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initEnvelopeAnimation);
 } else {
   initEnvelopeAnimation();
-}();
 }
