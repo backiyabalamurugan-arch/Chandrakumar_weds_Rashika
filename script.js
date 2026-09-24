@@ -144,16 +144,15 @@ function initEnvelopeAnimation() {
       bgMusic.play().catch((err) => console.log('Audio playback info:', err));
     }
 
-    // 2. Open Envelope & Slide Card Up
+    // 2. Trigger Flap Opening & Card Slide
     envelopeContainer.classList.add('open');
 
-    // 3. Smoothly fade out overlay to reveal website
+    // 3. Wait for the card to fully slide up, then fade out overlay to show main site
     setTimeout(() => {
       overlay.classList.add('hidden');
-    }, 2200);
+    }, 1600); // 1.6 seconds delay gives full card reveal before showing main site
   };
 
-  // Trigger on clicking seal image or envelope container
   if (sealBtn) sealBtn.addEventListener('click', handleOpen);
   envelopeContainer.addEventListener('click', handleOpen);
 }
@@ -162,4 +161,5 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initEnvelopeAnimation);
 } else {
   initEnvelopeAnimation();
+}();
 }
