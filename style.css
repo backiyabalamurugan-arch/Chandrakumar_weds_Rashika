@@ -18,12 +18,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #120b18;
-  z-index: 999999;
+  background: #0f0a18; /* MUST BE SOLID, NOT TRANSPARENT OR RADIAL WITH TRANSPARENCY */
+  z-index: 999999; /* Higher than canvas or main website #root */
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.8s ease 0.4s, visibility 0.8s ease 0.4s;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
 .envelope-overlay.hidden {
